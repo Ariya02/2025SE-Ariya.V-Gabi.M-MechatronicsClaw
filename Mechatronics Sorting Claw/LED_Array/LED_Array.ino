@@ -1,40 +1,16 @@
 #define LED_PIN 13
 
-class Led 
-{
-private:
-  byte pin;
-public:
-  Led() {} //do not use
+#include "LED_Array.h"
 
-  Led(byte pin)
-  {
-    this->pin = pin;
-  }
-
-  void init()
-  {
-    pinMode(pin, OUTPUT);
-  }
-
-  void on()
-  {
-    digitalWrite(pin, High);
-  }
-
-  void off()
-  {
-
-  }
-};
-
+Led led(LED_PIN);
 
 void setup() {
-
-
+  led.init();
 }
 
 void loop() {
-
-
+  led.on();
+  delay(500);
+  led.off();
+  delay(500);
 }
