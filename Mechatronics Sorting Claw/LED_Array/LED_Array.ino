@@ -17,16 +17,16 @@ void setup() {
 }
 
 void loop() {
-  Led.loadFrame(arrow_left);
-  delay(500);
-
-  Led.loadFrame(arrow_right);
-  delay(500);
-  
-  Led.loadFrame(arrow_up);
-  delay(500);
-
-  Led.loadFrame(arrow_down);
-  delay(500);
+  Led.beginDraw();
+  Led.stroke(0xFFFFFFFF);
+  Led.textScrollSpeed(50);
+  // add the text
+  const char text[] = "   Hello World!   ";
+  Led.textFont(Font_5x7);
+  Led.beginText(0, 1, 0xFFFFFF);
+  Led.println(text);
+  Led.endText(SCROLL_LEFT);
+  Led.endDraw();
+}
 
 }
