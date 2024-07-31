@@ -1,14 +1,14 @@
 #include <Servo.h>
 #define SERVO_PIN 13 
 
-class Servo
+class myServo
 {
 private: 
   byte pin;
 public: 
-  Servo() {} // do not use
+  myServo() {} // do not use
 
-  Servo(byte pin)
+  myServo(byte pin)
   {
     this->pin = pin;
   }
@@ -18,10 +18,7 @@ public:
     pinMode(pin, OUTPUT);
   }
 
-  void attach(pin)
-  {
-    pinMode(pin, OUTPUT);
-  }
+  void attach(pin);
 
   void write(angle)
   {
@@ -29,7 +26,7 @@ public:
   }
 };
 
-Servo servo(SERVO_PIN);
+myServo servo();
 int pos = 0 ;
 
 void setup() {
