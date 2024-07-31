@@ -20,13 +20,9 @@ void loop() {
   Led.beginDraw();
   Led.stroke(0xFFFFFFFF);
   Led.textScrollSpeed(50);
-  // add the text
-  const char text[] = "   Hello World!   ";
   Led.textFont(Font_5x7);
   Led.beginText(0, 1, 0xFFFFFF);
-  Led.println(text);
+  Led.println();
   Led.endText(SCROLL_LEFT);
   Led.endDraw();
-}
-
 }
