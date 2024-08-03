@@ -1,26 +1,27 @@
 #include "robotServo.h"
-#include <Servo.h>
 
-myServo::myServo(byte pin);
-{
-  this->pin = pin;
+myServo::myServo(int Pin) {
+  pin = Pin;
+  currentPos = 0;
 }
 
-void myServo::init();
-{
-  pinMode(pin);
+void myServo::attach() {
+  servos.attach(pin);
 }
 
-void myServo::servoPos();
+void myServo::init(int initialPos)
 {
-  int pos = 0;
-  for (pos = 0; pos <= 180; pos += 1) {  // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myServo.write(pos);  // tell servo to go to position in variable 'pos'
-    delay(15);           // waits 15ms for the servo to reach the position
+  attach();
+  setPos(initialPos);
+}
+
+void myServo::setPos(int pos) {
+  if (pos >= 0 && pos <=180){
+    servos.write(pos);
+    currentPos = pos;
   }
-  for (pos = 180; pos >= 0; pos -= 1) {  // goes from 180 degrees to 0 degrees
-    myServo.write(pos);                  // tell servo to go to position in variable 'pos'
-    delay(15);                           // waits 15ms for the servo to reach the position
-  }
+}
+
+int myServo::getPos() {
+  return currentPos;
 }

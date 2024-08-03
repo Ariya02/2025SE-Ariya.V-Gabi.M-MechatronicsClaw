@@ -1,18 +1,20 @@
-#ifndef SERVO_H
-#define SERVO_H
+#ifndef ROBOTSERVO_H
+#define ROBOTSERVO_H
 
-#include <Arduino.h>
 #include <Servo.h>
 
-class myServo
-{
-private:
-  byte pin;
-public:
-  myServo() {} // do not use
-  myServo(byte pin);
+class myServo {
+  private:
+    Servo servos;
+    int pin;
+    int currentPos;
 
-  void init();
-  void ServoPos();
-}
+  public:
+    myServo(int Pin);
+
+    void init(int initialPos = 0); //initialise
+    void setPos(int pos); // sets servo position
+    int getPos(); // gets servo position
+    void attach(); // attaches servo to pin
+  };
 #endif

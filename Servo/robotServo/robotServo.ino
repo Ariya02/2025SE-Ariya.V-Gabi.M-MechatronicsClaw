@@ -1,15 +1,18 @@
+#include <Arduino.h>
 #include "robotServo.h"
-#define SERVO_PIN 13 
 
-myServo thisServo;
+myServo myServo(9);
 
 void setup() {
-  thisServo.init(9);
-  thisServo.attach(9);
+  Serial.begin(9600);
+  myServo.init(90);
 }
 
 
 void loop() {
-  thisServo.ServoPos();
+  myServo.setPos(90);
+  delay(1000);
+  int position = myServo.getPos();
+  myServo.setPos(0);
 }
 
