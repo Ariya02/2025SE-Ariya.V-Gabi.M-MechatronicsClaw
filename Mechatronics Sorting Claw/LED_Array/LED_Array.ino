@@ -22,7 +22,7 @@ void loop() {
   Led.textScrollSpeed(50);
   Led.textFont(Font_5x7);
   Led.beginText(0, 1, 0xFFFFFF);
-  Led.println();
+  Led.println("Hello World");
   Led.endText(SCROLL_LEFT);
   Led.endDraw();
 }
