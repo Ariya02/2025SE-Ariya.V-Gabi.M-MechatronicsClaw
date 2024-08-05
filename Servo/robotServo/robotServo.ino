@@ -15,4 +15,3 @@ void loop() {
   int position = myServo.getPos();
   myServo.setPos(0);
 }
-
