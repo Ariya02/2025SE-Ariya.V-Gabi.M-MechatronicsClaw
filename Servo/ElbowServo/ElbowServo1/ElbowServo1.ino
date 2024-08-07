@@ -10,8 +10,12 @@ void setup() {
 
 void loop() {
   int pos = 0;
-  for (pos = 90; pos >= 0; pos -= 1) {
+  for (pos = 100; pos >= 20; pos -= 1) {
     ElbowServo1.setPos(pos);              
-    delay(100);                       
+    delay(50);                       
+  }
+  for (pos = 100; pos >=90; pos += 1){
+    ElbowServo1.setPos(pos);              
+    delay(50);  
   }
 }
