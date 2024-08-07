@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #include <Arduino.h>
 #include "robotServo.h"
 
@@ -18,4 +19,14 @@ void loop() {
     ElbowServo1.setPos(pos);              
     delay(50);  
   }
+=======
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+>>>>>>> Stashed changes
 }
