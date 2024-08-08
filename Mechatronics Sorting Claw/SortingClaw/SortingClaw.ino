@@ -1,11 +1,20 @@
 #include <Arduino.h>
 #include "robotServo.h"
 
-myServo neckServo(9);
+myServo baseServo(5);
+myServo elbowServo1(6);
+myServo elbowServo2(9);
+myServo neckServo(10);
+myServo clawServo(11);
 
 void setup() {
   Serial.begin(9600);
+  baseServo.init(90);
+  elbowServo1.init(90);
+  elbowServo2.init(90);
   neckServo.init(90);
+  clawServo.init(90);
+  
 }
 
 void loop() {
