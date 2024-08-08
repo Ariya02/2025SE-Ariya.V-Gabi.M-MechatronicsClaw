@@ -1,9 +1,28 @@
-void setup() {
-  // put your setup code here, to run once:
+#define LED_PIN 13
 
+#include "ArduinoGraphics.h"
+#include "Arduino_LED_Matrix.h"
+
+ArduinoLEDMatrix Led;
+
+void setup() {
+  Serial.begin(9600);
+   Led.begin();
+   Led.textFont(Font_5x7);
+   Led.textScrollSpeed(100);
+   Led.stroke(0xFF, 0, 0);
+   Led.beginText(0, 1, 0xFF, 0, 0);
+   Led.print("V00.00.01");
+   Led.endText(SCROLL_LEFT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  Led.beginDraw();
+  Led.stroke(0xFFFFFFFF);
+  Led.textScrollSpeed(50);
+  Led.textFont(Font_5x7);
+  Led.beginText(0, 1, 0xFFFFFF);
+  Led.println("Hello World");
+  Led.endText(SCROLL_LEFT);
+  Led.endDraw();
 }
