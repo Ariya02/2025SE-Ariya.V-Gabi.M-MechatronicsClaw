@@ -1,32 +1,29 @@
-<<<<<<< Updated upstream
 #include <Arduino.h>
 #include "robotServo.h"
 
-myServo ElbowServo1(9);
+myServo neckServo(9);
 
 void setup() {
   Serial.begin(9600);
-  ElbowServo1.init(90);
+  neckServo.init(90);
 }
 
 void loop() {
   int pos = 0;
-  for (pos = 100; pos >= 20; pos -= 1) {
-    ElbowServo1.setPos(pos);              
-    delay(50);                       
-  }
-  for (pos = 100; pos >=90; pos += 1){
-    ElbowServo1.setPos(pos);              
-    delay(50);  
-  }
-=======
-void setup() {
-  // put your setup code here, to run once:
-
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
->>>>>>> Stashed changes
+  for (pos = 45; pos <= 180; pos += 1) { // goes from 45 degrees to 180 degrees
+      neckServo.setPos(pos);              // tell servo to go to position in variable 'pos'
+      delay(100);                       // waits 15ms for the servo to reach the position
+    }
+    for (pos = 180; pos >= 45; pos -= 1) { // goes from 180 degrees to 45 degrees
+      neckServo.setPos(pos);              // tell servo to go to position in variable 'pos'
+      delay(100);                       // waits 15ms for the servo to reach the position
+    }
+      for (pos = 45; pos >= 0; pos -= 1) { // goes from 45 degrees to 0 degrees
+      neckServo.setPos(pos);              // tell servo to go to position in variable 'pos'
+      delay(100);                       // waits 15ms for the servo to reach the position
+    }
+      for (pos = 0; pos <= 45; pos += 1) { // goes from 0 degrees to 180 degrees
+      neckServo.setPos(pos);              // tell servo to go to position in variable 'pos'
+      delay(100);                       // waits 15ms for the servo to reach the position
+    }
 }
