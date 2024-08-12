@@ -3,7 +3,8 @@
 myLed::myLed(int Pin){
     pin = Pin;
 }
-void myLed.init(){
+
+void myLed::init(){
   Led.begin();
 }
 

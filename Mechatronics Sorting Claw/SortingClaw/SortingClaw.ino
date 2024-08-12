@@ -20,8 +20,6 @@ void setup() {
   neckServo.init(90);
   clawServo.init(90);
 
-  myLed.init();
-  myLed.version();
 }
 
 void loop() {
