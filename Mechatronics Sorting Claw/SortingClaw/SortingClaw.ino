@@ -2,30 +2,34 @@
 #include "robotServo.h"
 #include "LedArray.h"
 
-#define LED_PIN 13
-
 myServo baseServo(10);
-//myServo elbowServo1(6);
-//myServo elbowServo2(9);
-//myServo neckServo(10);
-//myServo clawServo(11);
+myServo elbowServo1(9);
 
-//myLed myLed();
+
+myLed displayLed("V00.00.001");
 
 void setup() {
   Serial.begin(9600);
-  baseServo.init(90);
-  //elbowServo1.init(90);
-  //elbowServo2.init(90);
-  //neckServo.init(90);
-  //clawServo.init(90);
+  displayLed.Led.begin();
+  displayLed.displayVer();
 
+  baseServo.init(90);
+  elbowServo1.init(90);
+  
+  int pos = 0;
+  for  (int pos = 90; pos <= 180; pos += 1) {
+    baseServo.setPos(pos);
+    delay(15);
+  }
+
+  delay (1000);
+
+  for (int pos = 90; pos <= 180; pos +=1){
+    elbowServo1.setPos(pos);
+    delay(15);
+  }
 }
 
 void loop() {
-  int pos = 0;
-  for (pos = 90; pos >= 45; pos -=1){
-      baseServo.setPos(pos);
-      delay(50);
-  }
+
 }

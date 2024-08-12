@@ -1,18 +1,18 @@
 #include "LedArray.h"
 
-myLed::myLed(int Pin){
-    pin = Pin;
+myLed::myLed(String ver){
+  version = ver;
 }
 
-void myLed::init(){
-  Led.begin();
+void myLed::versionDisplay(String ver){
+  version = ver;
 }
 
-void myLed::version() {
-  Led.textFont(Font_5x7);
-  Led.textScrollSpeed(100);
-  Led.stroke(0xFF, 0, 0);
-  Led.beginText(0, 1, 0xFF, 0, 0);
-  Led.print("V00.00.01");
-  Led.endText(SCROLL_LEFT);
+void myLed::displayVer() {
+  thisLed.textFont(Font_5x7);
+  thisLed.textScrollSpeed(100);
+  thisLed.stroke(0xFF, 0, 0);
+  thisLed.beginText(0, 1, 0xFF, 0, 0);
+  thisLed.print("version");
+  thisLed.endText(SCROLL_LEFT);
 }

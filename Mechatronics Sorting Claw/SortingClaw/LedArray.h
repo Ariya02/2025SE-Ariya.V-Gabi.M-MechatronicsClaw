@@ -1,18 +1,18 @@
 #ifndef LEDARRAY_H
 #define LEDARRAY_H
 
-#include "ArduinoGraphics.h"
+#include <Arduino.h>
 #include "Arduino_LED_Matrix.h"
+#include "ArduinoGraphics.h"
 
 class myLed {
   private:
-    ArduinoLEDMatrix Led;
-    int pin;
-
+    ArduinoLEDMatrix thisLed;
+    String version;
   public:
-    myLed(int Pin);
-
-    void init();
-    void version(); 
+    myLed(String ver); //initialises
+    void versionDisplay(String version); //Update version
+    void displayVer(); // displays updated version
+    
   };
 #endif
