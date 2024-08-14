@@ -19,7 +19,7 @@ void setup() {
    myLed.textScrollSpeed(100);
    myLed.stroke(0xFF, 0, 0);
    myLed.beginText(0, 1, 0xFF, 0, 0);
-   myLed.print("V00.00.09");
+   myLed.print("V00.01.11");
    myLed.endText(SCROLL_LEFT);
 
 //initialise servos
@@ -29,7 +29,7 @@ void setup() {
   clawServo.init(120);
   
   baseServo.moveServo(180); // moves base to 180 degrees
-  elbowServo1.moveServo(45); // moves elbow1 to 45 degrees
+  elbowServo1.moveServo(55); // moves elbow1 to 45 degrees
   elbowServo2.moveServo(120); // moves elbow2 to 120 degrees
   clawServo.moveClaw(); //Opens and closes claw
   elbowServo2.resetPos();

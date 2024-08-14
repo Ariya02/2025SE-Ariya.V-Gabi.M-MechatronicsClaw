@@ -22,27 +22,26 @@ void myServo::setPos(int pos) {
   }
 }
 
-void myServo::moveServo(int angle){  
- if (angle > currentPos) {
-    for (int angle = currentPos; angle <= angle; thisAngle += 1) {
-      servos.write(thisAngle);
+void myServo::moveServo(int moveAngle){  
+ if (moveAngle > currentPos) {
+    for (int angle = currentPos; angle <= moveAngle; angle += 1) {
+      servos.write(angle);
       delay(20);
      }
   } 
   else {
-    for (int angle = currentPos; angle >= angle; thisAngle-= 1) {
-      servos.write(thisAngle); 
-      delay(15);
+    for (int angle = currentPos; angle >=moveAngle; angle -= 1) {
+      servos.write(angle); 
+      delay(20);
     }
   }
-  currentPos = angle; //Makes current position the angle
-  delay(1000); 
+  currentPos = moveAngle; //Makes current position the angle
 }
 
 
 void myServo::moveClaw(){
   setPos(30); //opens claw
-  delay(2000);
+  delay(1000);
   setPos(120);//closes claw
   delay(500);
 }
