@@ -2,13 +2,14 @@
 #define ROBOTSERVO_H
 
 #include <Servo.h>
+#include <Arduino.h>
 
 class myServo {
   private:
     Servo servos;
     int pin;
     int currentPos;
-    int movePos;
+    int thisAngle;
 
   public:
     myServo(int Pin);
@@ -17,6 +18,8 @@ class myServo {
     void setPos(int pos); // sets servo position
     int getPos(); // gets servo position
     void attach(); // attaches servo to pin
-    void moveLess(int movePos);// moves postion to a smaller angle than current positon
+    void moveServo(int moveAngle); //moves servo in 1 degree increments
+    void moveClaw(); // opens and closes claw
+    void resetPos(); // moves servo to 90 degrees
   };
 #endif
