@@ -22,6 +22,12 @@ void myServo::setPos(int pos) {
   }
 }
 
+void myServo::moveLess(int movePos){ //move to a higher angle 
+    for (int pos = getPos(); pos >= movePos; pos -= 1) {
+    setPos(pos);
+  }
+}
+
 int myServo::getPos() {
   return currentPos;
 }

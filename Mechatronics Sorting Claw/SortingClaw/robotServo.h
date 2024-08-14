@@ -8,6 +8,7 @@ class myServo {
     Servo servos;
     int pin;
     int currentPos;
+    int movePos;
 
   public:
     myServo(int Pin);
@@ -16,5 +17,6 @@ class myServo {
     void setPos(int pos); // sets servo position
     int getPos(); // gets servo position
     void attach(); // attaches servo to pin
+    void moveLess(int movePos);// moves postion to a smaller angle than current positon
   };
 #endif
