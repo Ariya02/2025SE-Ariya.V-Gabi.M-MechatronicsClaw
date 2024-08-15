@@ -19,7 +19,8 @@ class myServo {
     int getPos(); // gets servo position
     void attach(); // attaches servo to pin
     void moveServo(int moveAngle); //moves servo in 1 degree increments
-    void moveClaw(); // opens and closes claw
+    void openClaw(); // opens claw
+    void closeClaw(); //closes claw
     void resetPos(); // moves servo to 90 degrees
   };
 #endif

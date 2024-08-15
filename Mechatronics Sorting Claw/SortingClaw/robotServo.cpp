@@ -39,15 +39,19 @@ void myServo::moveServo(int moveAngle){
 }
 
 
-void myServo::moveClaw(){
-  setPos(30); //opens claw
+void myServo::openClaw(){
+  setPos(60); //opens claw
   delay(1000);
-  setPos(120);//closes claw
-  delay(500);
+}
+
+void myServo::closeClaw(){
+  setPos(90);//closes claw
+  delay(1000);
 }
 
 void myServo:: resetPos(){
   moveServo(90);
+  delay(1000);
 }
 
 int myServo::getPos() {

@@ -19,19 +19,23 @@ void setup() {
    myLed.textScrollSpeed(100);
    myLed.stroke(0xFF, 0, 0);
    myLed.beginText(0, 1, 0xFF, 0, 0);
-   myLed.print("V00.01.11");
+   myLed.print("V00.01.12");
    myLed.endText(SCROLL_LEFT);
 
 //initialise servos
   baseServo.init(90);
   elbowServo1.init(90);
   elbowServo2.init(90);
-  clawServo.init(120);
+  clawServo.init(60);
   
+  //Pick up and relocate 1st cube
+  elbowServo2.moveServo(120);
+  clawServo.closeClaw();
+  elbowServo2.resetPos();
   baseServo.moveServo(180); // moves base to 180 degrees
   elbowServo1.moveServo(55); // moves elbow1 to 45 degrees
   elbowServo2.moveServo(120); // moves elbow2 to 120 degrees
-  clawServo.moveClaw(); //Opens and closes claw
+  clawServo.openClaw();
   elbowServo2.resetPos();
   elbowServo1.resetPos();
   baseServo.resetPos();
