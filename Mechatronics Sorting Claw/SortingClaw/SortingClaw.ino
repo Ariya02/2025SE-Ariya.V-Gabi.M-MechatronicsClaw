@@ -19,7 +19,7 @@ void setup() {
    myLed.textScrollSpeed(100);
    myLed.stroke(0xFF, 0, 0);
    myLed.beginText(0, 1, 0xFF, 0, 0);
-   myLed.print("V00.01.13");
+   myLed.print("V00.02.01");
    myLed.endText(SCROLL_LEFT);
 
 //initialise servos

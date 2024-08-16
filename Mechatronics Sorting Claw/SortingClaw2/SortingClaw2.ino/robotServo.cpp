@@ -1,6 +1,5 @@
 #include "robotServo.h"
 
-
 myServo::myServo(int Pin) {
   pin = Pin;
   currentPos = 0;
