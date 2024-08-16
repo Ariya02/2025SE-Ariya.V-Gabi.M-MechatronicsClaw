@@ -40,7 +40,7 @@ void myServo::moveServo(int moveAngle){
 
 
 void myServo::openClaw(){
-  setPos(60); //opens claw
+  setPos(50); //opens claw
   delay(1000);
 }
 
