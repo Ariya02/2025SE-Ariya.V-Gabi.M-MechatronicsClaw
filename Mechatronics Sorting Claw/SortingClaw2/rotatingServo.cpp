@@ -34,7 +34,7 @@ void rotateServo::moveServo(int moveAngle){
 
 void rotateServo::resetPos(){
   moveServo(90);
-  delay(1000);
+  delay(100);
 }
 
 int rotateServo::getPos(){

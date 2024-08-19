@@ -18,7 +18,7 @@ void hingeServo::setPos(int pos){
 
 void hingeServo::resetPos(){
   moveServo(90);
-  delay(1000);
+  delay(100);
 }
 
 void hingeServo::moveServo(int moveAngle){

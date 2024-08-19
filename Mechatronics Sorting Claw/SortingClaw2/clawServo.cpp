@@ -28,5 +28,5 @@ void clawServo::setPos(int pos){
 
 void clawServo::resetPos(){
   setPos(90);
-  delay(1000);
+  delay(100);
 }
