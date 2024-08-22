@@ -10,7 +10,6 @@ class clawServo {
   int pin;
   int currentPos;
   public: 
-    public: 
     clawServo() {} // default constructor
     clawServo(int pin);
 
